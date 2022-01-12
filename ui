@@ -3651,3 +3651,7 @@ function library:CreateWindow(name, size, hidebutton)
 end
 
 return library
+
+if game:GetService("CoreGui")["stiffy test"].main.Visible == false then 
+    cursor = false 
+end
