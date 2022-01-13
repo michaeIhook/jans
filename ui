@@ -22,7 +22,7 @@ library.theme = {
     titlesize = 18,
     font = Enum.Font.Code,
     tilesize = 90,
-    cursor = true,
+    cursor = false,
     cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
     backgroundcolor = Color3.fromRGB(20, 20, 20),
     tabstextcolor = Color3.fromRGB(240, 240, 240),
@@ -686,7 +686,7 @@ function library:CreateWindow(name, size, hidebutton)
                 button.BlackOutline2 = Instance.new("Frame", button.Main)
                 button.BlackOutline2.Name = "blackline"
                 button.BlackOutline2.ZIndex = 4
-                button.BlackOutline2.Size = button.Main.Size + UDim2.fromOffset(6, 6)
+                button.BlackOutline2.Size = button.Main.Size + UDim2.fromOffset(3, 3)
                 button.BlackOutline2.BorderSizePixel = 0
                 button.BlackOutline2.BackgroundColor3 = window.theme.outlinecolor2
                 button.BlackOutline2.Position = UDim2.fromOffset(-3, -3)
@@ -697,7 +697,7 @@ function library:CreateWindow(name, size, hidebutton)
                 button.Outline = Instance.new("Frame", button.Main)
                 button.Outline.Name = "blackline"
                 button.Outline.ZIndex = 4
-                button.Outline.Size = button.Main.Size + UDim2.fromOffset(4, 4)
+                button.Outline.Size = button.Main.Size + UDim2.fromOffset(1, 1)
                 button.Outline.BorderSizePixel = 0
                 button.Outline.BackgroundColor3 = window.theme.outlinecolor
                 button.Outline.Position = UDim2.fromOffset(-2, -2)
@@ -708,7 +708,7 @@ function library:CreateWindow(name, size, hidebutton)
                 button.BlackOutline = Instance.new("Frame", button.Main)
                 button.BlackOutline.Name = "blackline"
                 button.BlackOutline.ZIndex = 4
-                button.BlackOutline.Size = button.Main.Size + UDim2.fromOffset(2, 2)
+                button.BlackOutline.Size = button.Main.Size + UDim2.fromOffset(1, 1)
                 button.BlackOutline.BorderSizePixel = 0
                 button.BlackOutline.BackgroundColor3 = window.theme.outlinecolor2
                 button.BlackOutline.Position = UDim2.fromOffset(-1, -1)
@@ -1729,7 +1729,7 @@ function library:CreateWindow(name, size, hidebutton)
                     slider.Main.BorderSizePixel = 0
                     slider.Main.Size = UDim2.fromOffset(sector.Main.Size.X.Offset - 12, 12)
                     slider.Main.AutoButtonColor = false
-                    slider.Main.Text = "Value:"
+                    slider.Main.Text = ""
                     slider.Main.ZIndex = 7
 
                     slider.InputLabel = Instance.new("TextLabel", slider.Main)
