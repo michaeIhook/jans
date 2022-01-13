@@ -1729,7 +1729,7 @@ function library:CreateWindow(name, size, hidebutton)
                     slider.Main.BorderSizePixel = 0
                     slider.Main.Size = UDim2.fromOffset(sector.Main.Size.X.Offset - 12, 12)
                     slider.Main.AutoButtonColor = false
-                    slider.Main.Text = ""
+                    slider.Main.Text = "Value:"
                     slider.Main.ZIndex = 7
 
                     slider.InputLabel = Instance.new("TextLabel", slider.Main)
