@@ -686,7 +686,7 @@ function library:CreateWindow(name, size, hidebutton)
                 button.BlackOutline2 = Instance.new("Frame", button.Main)
                 button.BlackOutline2.Name = "blackline"
                 button.BlackOutline2.ZIndex = 4
-                button.BlackOutline2.Size = button.Main.Size + UDim2.fromOffset(1.5, 1.5)
+                button.BlackOutline2.Size = button.Main.Size + UDim2.fromOffset(6, 6)
                 button.BlackOutline2.BorderSizePixel = 0
                 button.BlackOutline2.BackgroundColor3 = window.theme.outlinecolor2
                 button.BlackOutline2.Position = UDim2.fromOffset(-3, -3)
@@ -697,7 +697,7 @@ function library:CreateWindow(name, size, hidebutton)
                 button.Outline = Instance.new("Frame", button.Main)
                 button.Outline.Name = "blackline"
                 button.Outline.ZIndex = 4
-                button.Outline.Size = button.Main.Size + UDim2.fromOffset(1, 1)
+                button.Outline.Size = button.Main.Size + UDim2.fromOffset(4, 4)
                 button.Outline.BorderSizePixel = 0
                 button.Outline.BackgroundColor3 = window.theme.outlinecolor
                 button.Outline.Position = UDim2.fromOffset(-2, -2)
@@ -708,7 +708,7 @@ function library:CreateWindow(name, size, hidebutton)
                 button.BlackOutline = Instance.new("Frame", button.Main)
                 button.BlackOutline.Name = "blackline"
                 button.BlackOutline.ZIndex = 4
-                button.BlackOutline.Size = button.Main.Size + UDim2.fromOffset(0, 0)
+                button.BlackOutline.Size = button.Main.Size + UDim2.fromOffset(1, 1)
                 button.BlackOutline.BorderSizePixel = 0
                 button.BlackOutline.BackgroundColor3 = window.theme.outlinecolor2
                 button.BlackOutline.Position = UDim2.fromOffset(-1, -1)
@@ -3405,7 +3405,7 @@ function library:CreateWindow(name, size, hidebutton)
 
             configSystem.sector = tab:CreateSector("Configs", side or "left")
 
-            local ConfigName = configSystem.sector:AddTextbox("", "", ConfigName, function() end, "")
+            local ConfigName = configSystem.sector:AddTextbox("Config Name", "", ConfigName, function() end, "")
             local default = tostring(listfiles(configSystem.configFolder)[1] or ""):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", "")
             local Config = configSystem.sector:AddDropdown("Config selected", {}, default, false, function() end, "")
             for i,v in pairs(listfiles(configSystem.configFolder)) do
@@ -3505,21 +3505,9 @@ function library:CreateWindow(name, size, hidebutton)
                 end
             end)
 
-            configSystem.Delete = configSystem.sector:AddButton("Delete", function()
-                for i,v in pairs(listfiles(configSystem.configFolder)) do
-                    Config:Remove(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
-                end
+            
 
-                if (not Config:Get() or Config:Get() == "") then return end
-                if (not isfile(configSystem.configFolder .. "/" .. Config:Get() .. ".txt")) then return end
-                delfile(configSystem.configFolder .. "/" .. Config:Get() .. ".txt")
-
-                for i,v in pairs(listfiles(configSystem.configFolder)) do
-                    if v:find(".txt") then
-                        Config:Add(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
-                    end
-                end
-            end)
+           
 
             return configSystem
         end
