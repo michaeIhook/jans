@@ -673,7 +673,7 @@ function library:CreateWindow(name, size, hidebutton)
                 button.Main.AutoButtonColor = false
                 button.Main.Name = "button"
                 button.Main.ZIndex = 5
-                button.Main.Size = UDim2.fromOffset(sector.Main.Size.X.Offset - 12, 14)
+                button.Main.Size = UDim2.fromOffset(sector.Main.Size.X.Offset - 12, 16)
                 button.Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 
                 button.Gradient = Instance.new("UIGradient", button.Main)
@@ -708,7 +708,7 @@ function library:CreateWindow(name, size, hidebutton)
                 button.BlackOutline = Instance.new("Frame", button.Main)
                 button.BlackOutline.Name = "blackline"
                 button.BlackOutline.ZIndex = 4
-                button.BlackOutline.Size = button.Main.Size + UDim2.fromOffset(1, 1)
+                button.BlackOutline.Size = button.Main.Size + UDim2.fromOffset(2, 2)
                 button.BlackOutline.BorderSizePixel = 0
                 button.BlackOutline.BackgroundColor3 = window.theme.outlinecolor2
                 button.BlackOutline.Position = UDim2.fromOffset(-1, -1)
