@@ -3324,13 +3324,14 @@ function library:CreateWindow(name, size, hidebutton)
                 return dropdown
             end
 
-            function sector:AddSeperator()
-                local seperator = { }
+            function sector:AddSeperator(text)
+                local seperator = {}
+                seperator.text = text or ""
 
                 seperator.main = Instance.new("Frame", sector.Items)
                 seperator.main.Name = "Main"
                 seperator.main.ZIndex = 5
-                seperator.main.Size = UDim2.fromOffset(sector.Main.Size.X.Offset - 18, 10)
+                seperator.main.Size = UDim2.fromOffset(sector.Main.Size.X.Offset - 12, 10)
                 seperator.main.BorderSizePixel = 0
                 seperator.main.BackgroundTransparency = 1
 
@@ -3339,7 +3340,7 @@ function library:CreateWindow(name, size, hidebutton)
                 seperator.line.ZIndex = 7
                 seperator.line.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
                 seperator.line.BorderSizePixel = 0
-                seperator.line.Size = UDim2.fromOffset(sector.Main.Size.X.Offset - 26, 1)
+                seperator.line.Size = UDim2.fromOffset(sector.Main.Size.X.Offset - 35, 1)
                 seperator.line.Position = UDim2.fromOffset(7, 5)
 
                 seperator.outline = Instance.new("Frame", seperator.line)
