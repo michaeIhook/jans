@@ -3331,7 +3331,7 @@ function library:CreateWindow(name, size, hidebutton)
                 seperator.main = Instance.new("Frame", sector.Items)
                 seperator.main.Name = "Main"
                 seperator.main.ZIndex = 5
-                seperator.main.Size = UDim2.fromOffset(sector.Main.Size.X.Offset - 12, 10)
+                seperator.main.Size = UDim2.fromOffset(sector.Main.Size.X.Offset - 18, 10)
                 seperator.main.BorderSizePixel = 0
                 seperator.main.BackgroundTransparency = 1
 
