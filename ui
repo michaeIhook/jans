@@ -3403,7 +3403,7 @@ function library:CreateWindow(name, size, hidebutton)
                 makefolder(configSystem.configFolder)
             end
 
-            configSystem.sector = tab:CreateSector("Config", side or "left")
+            configSystem.sector = tab:CreateSector("Configuration", side or "left")
 
             local ConfigName = configSystem.sector:AddTextbox("Config name" , " ",  ConfigName, function() end, "")
             local default = tostring(listfiles(configSystem.configFolder)[1] or ""):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", "")
@@ -3505,9 +3505,6 @@ function library:CreateWindow(name, size, hidebutton)
                 end
             end)
 
-            Setting:AddKeybind("Menu toggle", Enum.KeyCode.End, function(v) window.hidebutton = v end, function()end)
-
-           
 
             return configSystem
         end
