@@ -3341,7 +3341,7 @@ function library:CreateWindow(name, size, hidebutton)
                 seperator.line.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
                 seperator.line.BorderSizePixel = 0
                 seperator.line.Size = UDim2.fromOffset(sector.Main.Size.X.Offset - 35, 1)
-                seperator.line.Position = UDim2.fromOffset(7, 5)
+                seperator.line.Position = UDim2.fromOffset(9, 5)
 
                 seperator.outline = Instance.new("Frame", seperator.line)
                 seperator.outline.Name = "Outline"
@@ -3403,9 +3403,9 @@ function library:CreateWindow(name, size, hidebutton)
                 makefolder(configSystem.configFolder)
             end
 
-            configSystem.sector = tab:CreateSector("Configs", side or "left")
+            configSystem.sector = tab:CreateSector("Config", side or "left")
 
-            local ConfigName = configSystem.sector:AddTextbox("", "", ConfigName, function() end, "")
+            local ConfigName = configSystem.sector:AddTextbox("Config name", "", ConfigName, function() end, "")
             local default = tostring(listfiles(configSystem.configFolder)[1] or ""):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", "")
             local Config = configSystem.sector:AddDropdown("Config selected", {}, default, false, function() end, "")
             for i,v in pairs(listfiles(configSystem.configFolder)) do
