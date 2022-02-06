@@ -3326,7 +3326,7 @@ function library:CreateWindow(name, size, hidebutton)
 
             function sector:AddSeperator(text)
                 local seperator = {}
-                seperator.text = text or ""
+                seperator.text = text
 
                 seperator.main = Instance.new("Frame", sector.Items)
                 seperator.main.Name = "Main"
