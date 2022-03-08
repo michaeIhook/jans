@@ -682,17 +682,7 @@ function library:CreateWindow(name, size, hidebutton)
                 updateevent.Event:Connect(function(theme)
                     button.Gradient.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0.00, theme.buttoncolor), ColorSequenceKeypoint.new(1.00, theme.buttoncolor2) })
                 end)
-
-                button.BlackOutline2 = Instance.new("Frame", button.Main)
-                button.BlackOutline2.Name = "blackline"
-                button.BlackOutline2.ZIndex = 4
-                button.BlackOutline2.Size = button.Main.Size + UDim2.fromOffset(6, 6)
-                button.BlackOutline2.BorderSizePixel = 0
-                button.BlackOutline2.BackgroundColor3 = window.theme.outlinecolor2
-                button.BlackOutline2.Position = UDim2.fromOffset(-3, -3)
-                updateevent.Event:Connect(function(theme)
-                    button.BlackOutline2.BackgroundColor3 = theme.outlinecolor2
-                end)
+                
 
                 button.Outline = Instance.new("Frame", button.Main)
                 button.Outline.Name = "blackline"
@@ -703,17 +693,6 @@ function library:CreateWindow(name, size, hidebutton)
                 button.Outline.Position = UDim2.fromOffset(-2, -2)
                 updateevent.Event:Connect(function(theme)
                     button.Outline.BackgroundColor3 = theme.outlinecolor
-                end)
-
-                button.BlackOutline = Instance.new("Frame", button.Main)
-                button.BlackOutline.Name = "blackline"
-                button.BlackOutline.ZIndex = 4
-                button.BlackOutline.Size = button.Main.Size + UDim2.fromOffset(2, 2)
-                button.BlackOutline.BorderSizePixel = 0
-                button.BlackOutline.BackgroundColor3 = window.theme.outlinecolor2
-                button.BlackOutline.Position = UDim2.fromOffset(-1, -1)
-                updateevent.Event:Connect(function(theme)
-                    button.BlackOutline.BackgroundColor3 = theme.outlinecolor2
                 end)
 
                 button.Label = Instance.new("TextLabel", button.Main)
@@ -732,14 +711,6 @@ function library:CreateWindow(name, size, hidebutton)
                 updateevent.Event:Connect(function(theme)
                     button.Label.Font = theme.font
                     button.Label.TextColor3 = theme.itemscolor
-                end)
-
-                button.BlackOutline2.MouseEnter:Connect(function()
-                    button.BlackOutline2.BackgroundColor3 = window.theme.accentcolor
-                end)
-
-                button.BlackOutline2.MouseLeave:Connect(function()
-                    button.BlackOutline2.BackgroundColor3 = window.theme.outlinecolor2
                 end)
 
                 sector:FixSize()
